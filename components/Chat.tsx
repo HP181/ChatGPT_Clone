@@ -11,6 +11,7 @@ type Props = {
   ChatId: string;
 };
 
+
 function Chat({ ChatId }: Props) {
   const { data: session } = useSession();
 
