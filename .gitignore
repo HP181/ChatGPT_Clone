@@ -35,6 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 ServiceAccountKey.json
-Firebase.ts
 .vercel
 .vscode
