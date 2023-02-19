@@ -21,16 +21,16 @@ export default async function RootLayout({
           {!session ? (
             <Login />
           ) : (
-            <div className="flex">
+            <div className="flex ">
               {/* <Sidebar />  */}
-              <div className="bg-[#202123] max-w-xs h-max overflow-y-auto md:min-w-[15rem]">
+              <div className="sticky sm:static bg-[#202123] max-w-xs h-max  overflow-y-auto md:min-w-[15rem]">
                 <Sidebar />
               </div>
 
               {/* <ClientProvider  - Notification/>  */}
               <ClientProvider />
 
-              <div className="bg-[#343541] flex-1">{children}</div>
+              <div className="bg-[#343541] flex-1 overflow-y-auto">{children}</div>
             </div>
           )}
         </SessionProvider>
