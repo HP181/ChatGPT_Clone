@@ -16,8 +16,8 @@ const query = async (Input: string, ChatId: string, model: string) => {
       (err) =>
         `ChatGPT is unable to find an answer of your Question :( (Error: ${err.message})`
     );
-
   return res;
+
 };
 
 export default query;
