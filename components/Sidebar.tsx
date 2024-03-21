@@ -7,6 +7,7 @@ import { collection, orderBy, query } from "firebase/firestore";
 import { db } from "../Firebase";
 import ChatRow from "./ChatRow";
 import ModelSelection from "./ModelSelection";
+import { redirect } from 'next/navigation'
 
 function Sidebar() {
   const { data: session } = useSession();
@@ -18,6 +19,11 @@ function Sidebar() {
         orderBy("createdAt", "asc")
       )
   );
+
+  const SignOut = () => {
+    signOut()
+   return redirect('/')
+  }
 
   return (
     <div className="p-2 flex flex-col  overflow-y-hidden h-screen sticky">
@@ -48,7 +54,7 @@ function Sidebar() {
         <img
           src={session.user?.image!}
           className="h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50"
-          onClick={() => signOut()}
+          onClick={SignOut}
           alt="User Image"
         />
       )}
